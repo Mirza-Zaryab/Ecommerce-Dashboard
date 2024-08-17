@@ -1,0 +1,70 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.recent-group-container {
+  margin-top: 3vh;
+  h3 {
+    color: $secondaryColor;
+  }
+  .groups {
+    margin-top: 1vh;
+    @include flexVertical;
+    gap: 2vh;
+    .single-group {
+      padding: 13px 20px;
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      gap: 20px;
+      .group-pictures {
+        @include flexHorizontal;
+        img {
+          height: 4vh;
+          width: 4vh;
+          object-fit: cover;
+          border-radius: 50%;
+          outline: 2px solid rgb(255, 255, 255);
+          margin-right: -1.6vh;
+        }
+        h6 {
+          color: $secondaryColor;
+          margin-left: 15px;
+          opacity: 0.8;
+        }
+        padding-right: 20px;
+        border-right: 1px solid $tertiaryColor;
+      }
+      .group-stats {
+        display: flex;
+        gap: 20px;
+        .stat {
+          h5 {
+            color: $secondaryColor;
+          }
+        }
+      }
+    }
+    a {
+      align-self: center;
+      text-decoration: none;
+      .see-all {
+        @include flexHorizontal;
+        gap: 5px;
+        color: $primaryColor;
+        svg {
+          fill: $primaryColor;
+        }
+      }
+      &:hover {
+        .see-all {
+          @include flexHorizontal;
+          gap: 5px;
+          color: $secondaryColor;
+          svg {
+            fill: $secondaryColor;
+          }
+        }
+      }
+    }
+  }
+}
