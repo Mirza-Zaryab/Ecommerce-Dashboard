@@ -1,0 +1,14 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.primary-button {
+  border: 1px solid $primaryColor;
+  background-color: $primaryColor;
+  color: white;
+  transition: all 0.2s;
+  &:hover {
+    background-color: transparent;
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
+  }
+}
