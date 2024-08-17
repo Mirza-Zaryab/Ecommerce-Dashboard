@@ -1,0 +1,28 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.breadcrumb {
+  @include flexHorizontal;
+  color: $secondaryColor;
+  font-weight: 400;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  max-width: 85vw;
+  overflow-x: auto;
+  li {
+    list-style: none;
+    white-space: nowrap;
+    a {
+      white-space: nowrap;
+      color: $secondaryColor;
+      text-decoration: none;
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+  .separator {
+    margin-inline: 3px;
+  }
+}
