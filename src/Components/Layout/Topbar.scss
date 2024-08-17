@@ -1,0 +1,149 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.topbar {
+  padding: 10px;
+  padding-left: 0;
+  @include flexHorizontal;
+  justify-content: space-between;
+  @media (max-width: 767px) {
+    flex-direction: column-reverse;
+    padding-left: 10px;
+    gap: 20px;
+    justify-content: flex-end;
+  }
+  .search-wrapper {
+    width: 100%;
+    .search {
+      @include flexHorizontal;
+      justify-content: space-between;
+      padding: 12px 15px;
+      height: 45px;
+      width: 60%;
+      background-color: rgba(219, 220, 248, 0.4);
+      border-radius: 10px;
+      outline-color: $secondaryColor;
+      &:focus-within {
+        outline: 1px solid $primaryColor;
+      }
+      @media (max-width: 767px) {
+        margin-inline-start: auto;
+        width: 100%;
+      }
+      input {
+        height: 100%;
+        width: 80%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 16px;
+      }
+    }
+  }
+  .main-topbar-wrapper {
+    justify-self: flex-end;
+    @include flexHorizontal;
+    gap: 10px;
+    @media (max-width: 767px) {
+      margin-inline-start: auto;
+      flex-direction: column-reverse;
+      margin: 0;
+      width: 100%;
+      a {
+        width: 100%;
+      }
+      button {
+        width: 100%;
+      }
+    }
+    .active {
+      h4 {
+        text-decoration: underline !important;
+        text-decoration-thickness: 3px !important;
+        text-underline-offset: 5px;
+        text-decoration-color: #dbdcf8 !important;
+      }
+    }
+    .topbar-button {
+      white-space: nowrap;
+      background-color: $primaryColorLowForButton;
+      font-size: 18px;
+      font-weight: 700;
+      color: $primaryColor;
+      @include flexHorizontal;
+      gap: 10px;
+      padding: 15px 40px;
+      &:hover {
+        background-color: white;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+    .menu-and-picture-actions {
+      width: 100%;
+      @include flexHorizontal;
+      justify-content: space-between;
+      .mobile-menu-button {
+        display: none;
+        @media (max-width: 767px) {
+          display: block;
+          img {
+            height: 30px;
+            width: auto;
+          }
+        }
+      }
+      .picture-actions {
+        @include flexHorizontal;
+        gap: 10px;
+        img {
+          height: 57px;
+          width: 57px;
+          object-fit: cover;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+
+        .button-more-actions {
+          cursor: pointer;
+          color: $primaryColor;
+          &:hover {
+            color: $secondaryColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu-drawer {
+  display: none;
+  background-color: $primaryColor !important;
+  color: white !important;
+
+  @media (max-width: 767px) {
+    display: block;
+  }
+  .sidebar-menu {
+    @include flexVertical;
+    gap: 30px;
+    width: 100%;
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      @include flexHorizontal;
+      align-items: center;
+      gap: 20px;
+      &:hover {
+        transform: scale(1.1);
+      }
+      svg {
+        width: 23px;
+        height: auto;
+      }
+    }
+  }
+}
