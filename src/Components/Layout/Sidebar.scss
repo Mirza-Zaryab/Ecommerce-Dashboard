@@ -1,0 +1,60 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: $primaryColor;
+  height: 100vh;
+  min-width: 250px;
+  max-width: 250px;
+  @include flexVertical;
+  align-items: center;
+  padding: 40px 30px;
+  gap: 55px;
+  z-index: 100;
+
+  @media (max-width: 800px) {
+    display: none;
+    width: 0px;
+    height: 0;
+    visibility: hidden;
+    padding: 0;
+  }
+
+  .sidebar-menu {
+    @include flexVertical;
+    gap: 30px;
+    width: 100%;
+    .active {
+      text-decoration: underline !important;
+      text-decoration-thickness: 3px !important;
+      text-underline-offset: 5px;
+      text-decoration-color: #dbdcf8 !important;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      @include flexHorizontal;
+      align-items: center;
+      gap: 20px;
+      &:hover {
+        transform: scale(1.1);
+      }
+      svg {
+        width: 23px;
+        height: auto;
+      }
+    }
+  }
+}
+
+.active {
+  text-decoration: underline !important;
+  text-decoration-thickness: 3px !important;
+  text-underline-offset: 5px;
+  text-decoration-color: #dbdcf8 !important;
+}

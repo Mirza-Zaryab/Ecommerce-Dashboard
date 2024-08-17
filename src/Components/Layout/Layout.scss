@@ -1,0 +1,28 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.layout-container {
+  height: 100%;
+  display: flex;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+  main {
+    // width: 100%;
+    flex-grow: 1;
+    height: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow: auto;
+    button {
+      border-radius: 10px;
+      padding: 9px 15px;
+    }
+    .button-active {
+      background-color: $primaryColor;
+      color: white;
+      border: 1px solid $primaryColor;
+      font-weight: 700;
+    }
+  }
+}
