@@ -1,0 +1,27 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.stats {
+  h5 {
+    color: $secondaryColor;
+    a {
+      color: $secondaryColor;
+      @include flexHorizontal;
+      gap: 5px;
+      text-decoration: none;
+      &:hover {
+        color: $primaryColor;
+        svg {
+          fill: $primaryColor;
+        }
+      }
+    }
+  }
+  h2 {
+    margin-top: 5px;
+  }
+  .totals {
+    @include flexHorizontal;
+    justify-content: space-between;
+  }
+}
