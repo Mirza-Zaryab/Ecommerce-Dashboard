@@ -1,0 +1,73 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.retailers-wrapper {
+  margin-top: 3vh;
+  .retailers-top {
+    @include flexHorizontal;
+    justify-content: space-between;
+    a {
+      text-decoration: none;
+      h4 {
+        color: $primaryColor;
+      }
+      &:hover {
+        h4 {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+  .retailers-main {
+    margin-top: 1vh;
+    @include flexVertical;
+    gap: 20px;
+    .single-retailer {
+      @include flexHorizontal;
+      justify-content: space-between;
+      .single-retailer-left {
+        @include flexHorizontal;
+        gap: 5px;
+        img {
+          height: 35px;
+          width: 35px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        .retailer-detail {
+          h5 {
+            font-weight: 400;
+            gap: 1vh;
+            font-size: 12px;
+            margin-bottom: 3px;
+          }
+          .detail-date {
+            @include flexHorizontal;
+            gap: 5px;
+            p {
+              color: $secondaryColor;
+              font-size: 10px;
+            }
+            hr {
+              width: 1px;
+              height: 10px;
+              margin: 0;
+              background-color: $secondaryColor;
+            }
+          }
+        }
+      }
+      .single-retailer-right {
+        .right-rating {
+          @include flexHorizontal;
+          p {
+            margin-right: 5px;
+            font-size: 10px;
+            font-weight: 700;
+            color: $secondaryColor;
+          }
+        }
+      }
+    }
+  }
+}
