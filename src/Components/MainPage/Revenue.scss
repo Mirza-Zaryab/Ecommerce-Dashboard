@@ -1,0 +1,97 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.revenue-wrapper {
+  .revenue-top {
+    margin-top: 1.5vh;
+    @include flexHorizontal;
+    justify-content: space-between;
+    .revenue-top-buttons {
+      @include flexHorizontal;
+      gap: 10px;
+      @media (max-width: 767px) {
+        padding-bottom: 10px;
+        overflow-x: auto;
+      }
+    }
+  }
+  .revenue-main {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 7px 60px rgba(0, 0, 0, 0.05),
+      0px 4.53704px 35.1389px rgba(0, 0, 0, 0.037963),
+      0px 2.6963px 19.1111px rgba(0, 0, 0, 0.0303704),
+      0px 1.4px 9.75px rgba(0, 0, 0, 0.025),
+      0px 0.57037px 4.88889px rgba(0, 0, 0, 0.0196296),
+      0px 0.12963px 2.36111px rgba(0, 0, 0, 0.012037);
+    border-radius: 10px;
+    .revenue-main-buttons {
+      @include flexHorizontal;
+      gap: 20px;
+      @media (max-width: 767px) {
+        padding-bottom: 10px;
+        overflow-x: auto;
+      }
+      .revenue-button-wrapper {
+        h4 {
+          color: $secondaryColor;
+          opacity: 0.7;
+        }
+        .revenue-button {
+          margin-top: 5px;
+          font-weight: 700;
+          color: $textColor;
+          font-size: 14px;
+          padding: 16px 20px;
+          .revenue-zeros {
+            font-size: 10px;
+          }
+        }
+
+        .active-revenue-button {
+          color: $primaryColor;
+        }
+      }
+      .withdraw-button-wrapper {
+        transform: translateY(13px);
+        .withdraw-button {
+          color: $primaryColor;
+          background-color: $primaryColorLowForButton;
+          font-weight: 700;
+        }
+      }
+    }
+    .revenue-main-chart-wrapper {
+      @include centerChildren;
+      margin-top: 20px;
+      width: 97%;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+  }
+  .revenue-bottom {
+    margin-top: 20px;
+    gap: 20px;
+    // padding-bottom: 20px;
+
+    @include flexHorizontal;
+    align-items: flex-start;
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+    .revenue-bottom-left {
+      width: 50%;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    .revenue-bottom-right {
+      width: 50%;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+  }
+}
