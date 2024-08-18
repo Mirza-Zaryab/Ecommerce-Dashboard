@@ -1,0 +1,99 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.auth-container {
+  min-height: 100vh;
+  @include centerChildren;
+  position: relative;
+  background-color: #dbdcf8;
+
+  .container {
+    width: 45%;
+    @include flexVertical;
+    gap: 30px;
+    align-items: center;
+    padding: 30px;
+    border-radius: 30px;
+
+    .auth-main-container {
+      z-index: 10;
+      margin-top: 20px;
+      width: 100%;
+      padding: 35px 93px 60px 93px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 31px 80px rgba(0, 0, 0, 0.07),
+        0px 20.0926px 46.8519px rgba(0, 0, 0, 0.0531481),
+        0px 11.9407px 25.4815px rgba(0, 0, 0, 0.0425185),
+        0px 6.2px 13px rgba(0, 0, 0, 0.035),
+        0px 2.52593px 6.51852px rgba(0, 0, 0, 0.0274815),
+        0px 0.574074px 3.14815px rgba(0, 0, 0, 0.0168519);
+      @include flexVertical;
+      gap: 20px;
+      align-items: center;
+      h1 {
+        margin-bottom: 20px;
+      }
+      input {
+        width: 100%;
+        height: 45px;
+        border-radius: 10px;
+        border: 1px solid #bdbdbd;
+        padding: 0px 15px;
+        font-size: 14px;
+        margin-bottom: 20px;
+        &:focus {
+          outline-color: $primaryColor;
+        }
+        &::placeholder {
+          color: #bdbdbd;
+        }
+      }
+    }
+    button {
+      width: 80%;
+      height: 45px;
+      border: none;
+      background-color: $primaryColor;
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 30px;
+      margin-left: 30px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s;
+      &:hover {
+        background-color: transparent;
+        border: 1px solid $primaryColor;
+        color: $primaryColor;
+      }
+    }
+  }
+  .login-logo-cut {
+    position: absolute;
+    bottom: 0;
+    right: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* mobile devices */
+  .auth-container {
+    .container {
+      padding: 15px;
+      min-width: 100%;
+      .auth-main-container {
+        padding: 10px 40px 40px 40px;
+      }
+    }
+  }
+}
+
+@media (min-width: 580px) and (max-width: 991px) {
+  /* medium devices */
+  .auth-container {
+    .container {
+      min-width: 80%;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+@import "../../styles/variables";
+@import "../../styles/mixins.scss";
+
+.select-seller-page {
+  padding: 20px 10px 20px 20px;
+  @media (max-width: 767px) {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  .main-top {
+    @include flexHorizontal;
+    gap: 10px;
+    .back-button {
+      cursor: pointer;
+      transform: translateY(-6px);
+    }
+  }
+
+  .detail-items {
+    margin-left: 30px;
+    @include flexHorizontal;
+    gap: 10px;
+    width: 100%;
+    .order-detail-item {
+      .item-label {
+        margin-top: 20px;
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight: 700;
+        color: $secondaryColor;
+      }
+      .item-description {
+        @include flexHorizontal;
+        gap: 10px;
+        height: 40px;
+        padding: 7px 10px;
+        border-radius: 10px;
+        border: 1px solid $borderColor;
+        font-family: DM Sans;
+        font-size: 12px;
+        font-weight: 400;
+        img {
+          width: 30px;
+          height: 25px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+      }
+      .center-description {
+        justify-content: center;
+        min-width: 155px;
+        padding-inline: 20px;
+      }
+    }
+  }
+
+  .select-seller-page-main {
+    margin-left: 30px;
+    padding-right: 10px;
+    margin-top: 10px;
+    @media (max-width: 767px) {
+      padding-right: 0;
+    }
+    .select-seller-page-main-top {
+      margin-top: 20px;
+      @include flexHorizontal;
+      justify-content: space-between;
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .top-buttons {
+        @include flexHorizontal;
+        @media (max-width: 767px) {
+          padding-bottom: 5px;
+          width: 90vw;
+          hr {
+            min-width: 15px;
+          }
+        }
+        gap: 5px;
+        white-space: nowrap;
+        overflow-x: auto;
+        hr {
+          width: 15px;
+          border: 1px solid $tertiaryColor;
+        }
+      }
+    }
+    .select-seller-page-main-bottom {
+      margin-top: 15px;
+      strong {
+        color: #03030b;
+        font-weight: 700;
+        font-size: 12px;
+      }
+    }
+  }
+  .total-review-numbers {
+    font-size: 9px;
+    color: $secondaryColor;
+    margin-left: 5px;
+  }
+}
