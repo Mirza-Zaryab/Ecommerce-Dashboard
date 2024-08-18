@@ -1,0 +1,30 @@
+@import "../styles/variables";
+@import "../styles/mixins.scss";
+
+.table-actions {
+  @include flexHorizontal;
+  justify-content: center;
+  .action {
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 16px;
+    width: auto;
+    &:hover {
+      border-radius: 1px solid black;
+      transform: translateY(-3px);
+    }
+    svg {
+      display: block;
+    }
+  }
+  label {
+    @include flexHorizontal;
+    font-size: 12px;
+    font-weight: 500;
+    color: $secondaryColor;
+  }
+}
+
+.text-red {
+  color: $redColor;
+}
