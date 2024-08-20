@@ -1,0 +1,85 @@
+@import "../../styles/variables";
+@import "../../styles/mixins.scss";
+
+.customers-page {
+  padding: 20px 10px 20px 20px;
+  @media (max-width: 767px) {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  .customers-page-main {
+    padding-right: 10px;
+    margin-top: 10px;
+    @media (max-width: 767px) {
+      padding-right: 0;
+    }
+    .customers-page-main-top {
+      @include flexHorizontal;
+      justify-content: space-between;
+      @media (max-width: 767px) {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .top-buttons {
+        @include flexHorizontal;
+        gap: 5px;
+        @media (max-width: 767px) {
+          padding-bottom: 5px;
+          width: 90vw;
+          hr {
+            min-width: 15px;
+          }
+        }
+        white-space: nowrap;
+        overflow-x: auto;
+        hr {
+          width: 15px;
+          border: 1px solid $tertiaryColor;
+        }
+      }
+    }
+    .customers-page-main-bottom {
+      margin-top: 15px;
+      strong {
+        color: #03030b;
+        font-weight: 700;
+        font-size: 12px;
+      }
+    }
+  }
+}
+.customer-modal-body-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    margin-top: 10px;
+    height: 162px;
+    width: 162px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  h2 {
+    margin-top: 15px;
+  }
+  .contact-details {
+    margin-top: 20px;
+    @include flexHorizontal;
+    gap: 30px;
+    font-size: 16px !important;
+    .contact-name {
+      font-weight: normal;
+    }
+  }
+}
+
+.modal-back-button {
+  margin-top: 40px;
+  color: $primaryColor;
+  cursor: pointer;
+  text-align: center;
+  &:hover {
+    color: $secondaryColor;
+  }
+}
