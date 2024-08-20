@@ -1,0 +1,123 @@
+@import "../../styles/variables";
+@import "../../styles/mixins.scss";
+
+.order-details-page {
+  padding: 20px;
+  @media (max-width: 767px) {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  .order-details-main {
+    margin-top: 10px;
+    @media (max-width: 767px) {
+      padding-right: 0;
+    }
+    .main-top {
+      @include flexHorizontal;
+      gap: 10px;
+      .back-button {
+        cursor: pointer;
+        transform: translateY(-6px);
+      }
+    }
+    .main-bottom {
+      width: 50%;
+      margin-left: 30px;
+      .radio-div {
+        width: 100%;
+        @include flexHorizontal;
+        justify-content: space-between;
+        margin-top: 15px;
+        label {
+          @include flexHorizontal;
+          gap: 5px;
+        }
+        input {
+          width: 19px;
+          height: 19px;
+        }
+      }
+      .detail-items-line {
+        @include flexHorizontal;
+        justify-content: space-between;
+        width: 100%;
+
+        .select-a-seller {
+          @include flexHorizontal;
+          margin-top: 40px;
+          padding-left: 20px;
+          gap: 10px;
+          font-size: 16px;
+          font-weight: 700;
+          text-decoration: none;
+          transition: all 0.2s;
+          color: $primaryColor;
+          &:hover {
+            transform: translateX(20px);
+          }
+          svg {
+            fill: $primaryColor;
+            transform: rotate(180deg);
+            display: block;
+          }
+        }
+      }
+
+      .order-detail-item {
+        width: 48%;
+        .item-label {
+          margin-top: 20px;
+          margin-bottom: 5px;
+          font-size: 16px;
+          font-weight: 700;
+          color: $secondaryColor;
+        }
+        .item-description {
+          @include flexHorizontal;
+          gap: 15px;
+          height: 64px;
+          padding: 7px 10px;
+          border-radius: 10px;
+          border: 1px solid $borderColor;
+          font-family: DM Sans;
+          font-size: 16px;
+          font-weight: 400;
+          img {
+            width: 59px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+        }
+        .center-description {
+          justify-content: center;
+        }
+      }
+
+      .item-100 {
+        width: 100%;
+      }
+
+      .page-buttons {
+        margin-top: 60px;
+        @include flexHorizontal;
+        justify-content: flex-end;
+        gap: 40px;
+        .button-cancel {
+          background: none;
+          border: none;
+          font-family: DM Sans;
+          font-size: 17px;
+          font-weight: 700;
+          color: $redColor;
+        }
+        .button-update {
+          padding: 19px 48px;
+          font-size: 17px;
+          font-weight: 700;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+  }
+}
